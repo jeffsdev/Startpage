@@ -7,16 +7,22 @@
     <!--build:css css/main.min.css-->
     <link rel="stylesheet" href="css/main.css">
     <!--endbuild-->
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/jquery.simpleWeather.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
     <!--build:js js/main.min.js -->
-    <script src="js/lib/jquery-2.2.3.js"></script>
+    <script src="js/scripts.js"></script>
     <!-- endbuild -->
   </head>
   <body>
     <header>
       <div class="time-weather-container">
-        <span>10:00pm Saturday, September 27th</span>
-        <span>56degF</span>
+        <div id="weather"></div>
         <span>Portland, OR</span>
+        <div id="datetime">
+          <span class="date"></span>
+          <span class="time"></span>
+        </div>
       </div>
       <div class="greeting-container">
         <h1 class="main-greeting">Good Morning, Jeff.</h1>
