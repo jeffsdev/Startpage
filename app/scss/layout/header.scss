@@ -1,0 +1,31 @@
+header {
+  border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+
+  .time-weather-container,
+  .greeting-container,
+  .google-links-container {
+    background: #555;
+  }
+  .time-weather-container {
+    flex: 1 1 100%;
+    border: 1px solid green;
+    order: 1;
+    margin: 10px;
+    height: 50px;
+  }
+  .greeting-container {
+    flex: 1 1 100%;
+    border: 1px solid blue;
+    order: 3;
+  }
+  .google-links-container {
+    flex: 1 1 100%;
+    border: 1px solid lime;
+    order: 2;
+    margin: 10px;
+    height: 50px;    
+  }
+}
