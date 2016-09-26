@@ -5,3 +5,22 @@ body {
   background-size: cover;
   color: #eee;
 }
+
+main {
+  .search-container {
+    background: rgba(0, 0, 0, 0.5);
+    flex: 1 1 100%;
+    border: 1px solid #999;
+    order: 2;
+    margin-bottom: 10px;
+    height: 50px;
+  }
+  .bookmarks-container {
+    background: rgba(0, 0, 0, 0.5);
+    flex: 1 1 100%;
+    border: 1px solid #999;
+    order: 2;
+    margin-bottom: 10px;
+    height: 50px;
+  }
+}

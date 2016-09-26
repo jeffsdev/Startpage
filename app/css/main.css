@@ -95,28 +95,44 @@ body {
   background-size: cover;
   color: #eee; }
 
+main .search-container {
+  background: rgba(0, 0, 0, 0.5);
+  flex: 1 1 100%;
+  border: 1px solid #999;
+  order: 2;
+  margin-bottom: 10px;
+  height: 50px; }
+
+main .bookmarks-container {
+  background: rgba(0, 0, 0, 0.5);
+  flex: 1 1 100%;
+  border: 1px solid #999;
+  order: 2;
+  margin-bottom: 10px;
+  height: 50px; }
+
 header {
-  border: 1px solid red;
   display: flex;
   flex-wrap: wrap;
   width: 100%; }
   header .time-weather-container,
   header .greeting-container,
   header .google-links-container {
-    background: #555; }
+    background: rgba(0, 0, 0, 0.5); }
   header .time-weather-container {
     flex: 1 1 100%;
-    border: 1px solid green;
+    border: 1px solid #999;
     order: 1;
-    margin: 10px;
+    margin-bottom: 10px;
     height: 50px; }
   header .greeting-container {
     flex: 1 1 100%;
-    border: 1px solid blue;
-    order: 3; }
+    border: 1px solid #999;
+    order: 3;
+    margin-bottom: 10px; }
   header .google-links-container {
     flex: 1 1 100%;
-    border: 1px solid lime;
+    border: 1px solid #999;
     order: 2;
-    margin: 10px;
+    margin-bottom: 10px;
     height: 50px; }
