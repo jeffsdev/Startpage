@@ -7,11 +7,30 @@ header {
   header .google-links-container {
     background: rgba(0, 0, 0, 0.5); }
   header .time-weather-container {
+    display: flex;
     flex: 1 1 100%;
     border: 1px solid #999;
     order: 1;
     margin-bottom: 10px;
-    height: 50px; }
+    padding: 10px; }
+    header .time-weather-container .location-data {
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1 40%; }
+      header .time-weather-container .location-data .location {
+        font-size: 14px; }
+    header .time-weather-container #datetime {
+      flex: 1 1 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 14px; }
+      header .time-weather-container #datetime .date {
+        padding-top: 5px; }
+      header .time-weather-container #datetime .time {
+        padding-top: 5px;
+        font-size: 18px; }
   header .greeting-container {
     flex: 1 1 100%;
     border: 1px solid #999;

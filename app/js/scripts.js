@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
-  // WEATHER
+  // WEATHER //////////////////////////////////////////////
+
   $.simpleWeather({
     location: 'Portland, OR',
     woeid: '',
@@ -15,7 +16,7 @@ $(document).ready(function() {
     }
   });
 
-  // TIME and DATE
+  // TIME and DATE //////////////////////////////////////////////
 
   var datetime = null,
           date = null,
@@ -32,10 +33,5 @@ $(document).ready(function() {
   actualtime = $('#datetime .time');
   update();
   setInterval(update, 1000);
-
-
-
-
-
 
 });
