@@ -9,7 +9,7 @@ html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  height: 100%; }
+  height: auto; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -18,7 +18,8 @@ body {
   margin: 0;
   font: 16px/1 sans-serif;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  height: auto; }
 
 h1,
 h2,
@@ -109,14 +110,33 @@ main .search-container {
   order: 2;
   margin-bottom: 10px;
   height: 50px; }
+  main .search-container input {
+    height: 100%;
+    border: none;
+    width: 100%;
+    background: none;
+    padding: 10px;
+    font-size: 1.125em;
+    color: #eee; }
 
 main .bookmarks-container {
-  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   flex: 1 1 100%;
-  border: 1px solid #999;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
   order: 2;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #999;
   margin-bottom: 10px;
-  height: 50px; }
+  padding: 10px; }
+  main .bookmarks-container .bookmark-category {
+    width: 48%;
+    margin-bottom: 10px; }
+    main .bookmarks-container .bookmark-category .bookmark-category-title {
+      margin-bottom: 10px; }
+    main .bookmarks-container .bookmark-category ul li {
+      margin: 1rem 0; }
 
 header {
   display: flex;

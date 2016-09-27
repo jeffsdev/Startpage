@@ -14,13 +14,37 @@ main {
     order: 2;
     margin-bottom: 10px;
     height: 50px;
+    input {
+      height: 100%;
+      border: none;
+      width: 100%;
+      background: none;
+      padding: 10px;
+      font-size: 1.125em;
+      color: #eee;
+    }
   }
   .bookmarks-container {
-    background: rgba(0, 0, 0, 0.5);
+    display: flex;
     flex: 1 1 100%;
-    border: 1px solid #999;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
     order: 2;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #999;
     margin-bottom: 10px;
-    height: 50px;
+    padding: 10px;
+    .bookmark-category {
+      // border: 1px solid red;
+      width: 48%;
+      margin-bottom: 10px;
+      .bookmark-category-title {
+        margin-bottom: 10px;
+      }
+      ul li {
+        margin: 1rem 0;
+      }
+    }
   }
 }
