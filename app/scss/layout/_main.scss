@@ -4,6 +4,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   color: #eee;
+
 }
 
 main {
@@ -23,6 +24,11 @@ main {
       font-size: 1.125em;
       color: #eee;
     }
+    @media screen and #{$tablet} {
+      flex: none;
+      margin: 0 auto 10px auto;
+      width: 75%;
+    }
   }
   .bookmarks-container {
     display: flex;
@@ -36,7 +42,9 @@ main {
     margin-bottom: 10px;
     padding: 10px;
     h2 {
+      flex: 1 1 100%;
       margin: 0 auto 1em auto;
+      text-align: center;
     }
     .bookmark-category {
       // border: 1px solid red;
@@ -48,6 +56,14 @@ main {
       ul li {
         margin: 1rem 0;
       }
+      @media screen and #{$tablet} {
+        width: 33%;
+      }
+    }
+    @media screen and #{$tablet} {
+      flex: none;
+      margin: 0 auto 10px auto;
+      width: 75%;
     }
   }
 }
