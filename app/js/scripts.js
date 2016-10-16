@@ -37,12 +37,17 @@ $(document).ready(function() {
 
   // SEARCH BAR FUNCTIONALITY  //////////////////////////////////////////////
 
-  $('.search-container button').click(function() {
+  $('.search-container .search-web-btn').click(function() {
     event.preventDefault;
     var searchQuery = $('.search-container input').val();
     window.location.href = "http://www.google.com/search?q=" + searchQuery;
   });
 
+  $('.search-container .search-images-btn').click(function() {
+    event.preventDefault;
+    var searchQuery = $('.search-container input').val();
+    window.location.href = "http://www.google.com/images?q=" + searchQuery;
+  });
 
   // BOOKMARKS //////////////////////////////////////////////
 
