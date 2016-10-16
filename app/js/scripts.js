@@ -34,6 +34,16 @@ $(document).ready(function() {
   update();
   setInterval(update, 1000);
 
+
+  // SEARCH BAR FUNCTIONALITY  //////////////////////////////////////////////
+
+  $('.search-container button').click(function() {
+    event.preventDefault;
+    var searchQuery = $('.search-container input').val();
+    window.location.href = "http://www.google.com/search?q=" + searchQuery;
+  });
+
+
   // BOOKMARKS //////////////////////////////////////////////
 
   var bookmarks = [
@@ -120,10 +130,8 @@ $(document).ready(function() {
       );
     });
   });
-  //
-  // $(".bookmarks-container").each(function() {
-  //
-  // })
+
+
 
 
 
