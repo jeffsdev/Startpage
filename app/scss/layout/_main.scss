@@ -1,17 +1,40 @@
 body {
   background: #888;
-  background-image: url("../img/autumn-leaves.jpg");
+  // background-image: url("../img/autumn-leaves.jpg");
+  background-image: url("https://static.pexels.com/photos/24642/pexels-photo-24642.jpg");
+  background-position: right top;
   background-repeat: no-repeat;
   background-size: cover;
   color: #eee;
 
 }
 
+.wrapper {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  margin-left: auto;
+  margin-right: 5%;
+  @media screen and #{$tablet} {
+    max-width: 80%;
+    margin: auto;
+
+  }
+  @media screen and #{$desktop} {
+    max-width: 50%;
+    margin: 0 5% 0 auto;
+  }
+}
+
+
+
+
 main {
   .search-container {
     background: rgba(0, 0, 0, 0.5);
     flex: 1 1 100%;
-    border: 1px solid #999;
+    // border: 1px solid #999;
     order: 2;
     margin-bottom: 10px;
     // height: 50px;
@@ -65,8 +88,8 @@ main {
     justify-content: space-between;
     align-items: flex-start;
     order: 2;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #999;
+    // background: rgba(0, 0, 0, 0.5);
+    // border: 1px solid #999;
     margin-bottom: 10px;
     padding: 10px;
     h2 {
@@ -76,6 +99,7 @@ main {
     }
     .bookmark-category {
       // border: 1px solid red;
+      padding: 0 10px;
       width: 48%;
       margin-bottom: 10px;
       .bookmark-category-title {
@@ -91,7 +115,8 @@ main {
     @media screen and #{$tablet} {
       flex: none;
       margin: 0 auto 10px auto;
-      width: 75%;
+      margin-top: 20%;
+      width: 85%;
     }
   }
 }
