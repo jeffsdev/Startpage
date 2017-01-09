@@ -34,57 +34,79 @@ $(document).ready(function() {
   update();
   setInterval(update, 1000);
 
+  // GREETING MESSAGE /////////////////////////////////////////////
+
+  var hourOfDay = new Date().getHours();
+
+  if ( hourOfDay < 12 ) {
+    // 12am thru 11:59pm
+    $("#main-greeting").html("Good Morning,<br>Jeff");
+  } else if ( (hourOfDay >= 12) && (hourOfDay < 18) ) {
+    // 12pm thru 5:59pm
+    $("#main-greeting").html("Good Afternoon,<br>Jeff");
+  } else if ( (hourOfDay >= 18) && (hourOfDay <= 24) ) {
+    // 6pm thru 11:59pm
+    $("#main-greeting").html("Good Evening,<br>Jeff");
+  }
 
   // SEARCH BAR FUNCTIONALITY  //////////////////////////////////////////////
 
-  $('.search-container .search-web-btn').click(function() {
+  $('.search-container #search-submit').click(function(event) {
     event.preventDefault;
-    var searchQuery = $('.search-container input').val();
-    window.location.href = "http://www.google.com/search?q=" + searchQuery;
+    if ( $("#search-input").val().length === 0 ) {
+      $('.search-container').prepend("<span id='search-warn'>Please enter search parameters you fuck</span>");
+      $("#search-warn").fadeIn( 800 ).delay( 1500 ).fadeOut( 800, function() {
+        $("#search-warn").remove();
+      });
+      return false;
+    }
+    if( $("#search-toggles").hasClass("web-search-selected") ) {
+      var searchQuery = $('.search-container input').val();
+      window.location.href = "http://www.google.com/search?q=" + searchQuery;
+    }
+    if( $("#search-toggles").hasClass("images-search-selected") ) {
+      var searchQuery = $('.search-container input').val();
+      window.location.href = "http://www.google.com/images?q=" + searchQuery;
+    }
   });
 
-  $('.search-container .search-images-btn').click(function() {
-    event.preventDefault;
-    var searchQuery = $('.search-container input').val();
-    window.location.href = "http://www.google.com/images?q=" + searchQuery;
+  $("#search-input").keyup(function(event){
+    if(event.keyCode == 13){
+        $("#search-submit").click();
+    }
   });
+
+  $('.search-container #search-web-toggle').click(function(event) {
+    event.preventDefault;
+    $("#search-toggles").removeClass("images-search-selected");
+    $("#search-toggles").addClass("web-search-selected");
+  });
+
+  $('.search-container #search-images-toggle').click(function(event) {
+    event.preventDefault;
+    $("#search-toggles").removeClass("web-search-selected");
+    $("#search-toggles").addClass("images-search-selected");
+  });
+
+  if ( $("#search-input").val().length > 0 ) {
+    $(".search-container label").addClass("active");
+    $(".search-container #search-submit").addClass("active");
+  }
+
+  $("#search-input").focus(function() {
+    $(".search-container label").addClass("active");
+    $(".search-container #search-submit").addClass("active");
+  }).blur(function() {
+    if ( $("#search-input").val().length === 0 ) {
+      $(".search-container label").removeClass("active");
+      $(".search-container #search-submit").removeClass("active");
+    }
+  });
+
 
   // BOOKMARKS //////////////////////////////////////////////
 
   var bookmarks = [
-    {
-      "category": "4chan",
-      "links": [
-        {
-          "url": "http://www.4chan.org/c/",
-          "name": "/c/ - Anime / Cute"
-        },
-        {
-          "url": "http://www.4chan.org/a/",
-          "name": "/a/ - Anime / Manga"
-        },
-        {
-          "url": "http://www.4chan.org/b/",
-          "name": "/b/ - Random"
-        },
-        {
-          "url": "http://www.4chan.org/g/",
-          "name": "/g/ - Technology"
-        },
-        {
-          "url": "http://www.4chan.org/tg/",
-          "name": "/tg/ - Traditional Games"
-        },
-        {
-          "url": "http://www.4chan.org/v/",
-          "name": "/v/ - Video Games"
-        },
-        {
-          "url": "http://www.4chan.org/vg/",
-          "name": "/vg/ - Video Games General"
-        },
-      ]
-    },
     {
       "category": "Social Media",
       "links": [
@@ -137,9 +159,94 @@ $(document).ready(function() {
   });
 
 
-
-
-
-
-
 });
+
+
+
+
+window.onload = function(){
+	//canvas init
+	var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+
+	//canvas dimensions
+	var W = window.innerWidth;
+	var H = window.innerHeight;
+	canvas.width = W;
+	canvas.height = H;
+
+	//snowflake particles
+	var mp = 125; //max particles
+	var particles = [];
+	for(var i = 0; i < mp; i++)
+	{
+		particles.push({
+			x: Math.random()*W, //x-coordinate
+			y: Math.random()*H, //y-coordinate
+			r: Math.random()*3+1, //radius
+			d: Math.random()*mp //density
+		})
+	}
+
+	//Lets draw the flakes
+	function draw()
+	{
+		ctx.clearRect(0, 0, W, H);
+
+		ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+		ctx.beginPath();
+		for(var i = 0; i < mp; i++)
+		{
+			var p = particles[i];
+			ctx.moveTo(p.x, p.y);
+			ctx.arc(p.x, p.y, p.r, 0, Math.PI*2, true);
+		}
+		ctx.fill();
+		update();
+	}
+
+	//Function to move the snowflakes
+	//angle will be an ongoing incremental flag. Sin and Cos functions will be applied to it to create vertical and horizontal movements of the flakes
+	var angle = 0;
+	function update()
+	{
+		angle += 0.01;
+		for(var i = 0; i < mp; i++)
+		{
+			var p = particles[i];
+			//Updating X and Y coordinates
+			//We will add 1 to the cos function to prevent negative values which will lead flakes to move upwards
+			//Every particle has its own density which can be used to make the downward movement different for each flake
+			//Lets make it more random by adding in the radius
+			p.y += Math.cos(angle+p.d) + 1 + p.r/2;
+			p.x += Math.sin(angle) * 2;
+
+			//Sending flakes back from the top when it exits
+			//Lets make it a bit more organic and let flakes enter from the left and right also.
+			if(p.x > W+5 || p.x < -5 || p.y > H)
+			{
+				if(i%3 > 0) //66.67% of the flakes
+				{
+					particles[i] = {x: Math.random()*W, y: -10, r: p.r, d: p.d};
+				}
+				else
+				{
+					//If the flake is exitting from the right
+					if(Math.sin(angle) > 0)
+					{
+						//Enter from the left
+						particles[i] = {x: -5, y: Math.random()*H, r: p.r, d: p.d};
+					}
+					else
+					{
+						//Enter from the right
+						particles[i] = {x: W+5, y: Math.random()*H, r: p.r, d: p.d};
+					}
+				}
+			}
+		}
+	}
+
+	//animation loop
+	setInterval(draw, 33);
+}

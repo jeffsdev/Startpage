@@ -59,6 +59,12 @@ gulp.task('images', function() {
     .pipe(gulp.dest('dist/img'))
 });
 
+// move javascript libraries
+gulp.task('movejs', function() {
+  return gulp.src('app/js/lib/*.js')
+    .pipe(gulp.dest('dist/js/lib'))
+});
+
 // Cleaning
 gulp.task('clean', function() {
   return del.sync('dist').then(function(cb) {
@@ -89,7 +95,7 @@ gulp.task('default', function(callback) {
 gulp.task('build', function(callback) {
   runSequence(
     'clean:dist',
-    ['sass', 'useref', 'images'],
+    ['sass', 'useref', 'images', 'movejs'],
     callback
   )
 })
