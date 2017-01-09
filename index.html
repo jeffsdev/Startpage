@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Internets</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Roboto:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="js/lib/jquery-3.1.1.min.js"></script>
+    <script src="js/lib/jquery.simpleWeather.min.js"></script>
+    <script src="js/lib/moment.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div class="wrapper">
+      <header>
+        <div class="time-weather-container">
+          <div class="location-data">
+            <div id="weather"></div>
+            <span class="location">Portland, OR</span>
+          </div>
+          <div id="datetime">
+            <span class="time"></span>
+            <span class="date"></span>
+          </div>
+        </div>
+        <div class="greeting-container">
+          <h1 id="main-greeting"></h1>
+          <p class="greeting-message">welcome to the internet.</p>
+        </div>
+        <div class="google-links-container">
+          <span>Google - gmail - maps - drive</span>
+        </div>
+      </header>
+
+      <main>
+        <section class="search-container">
+          <input type="text" id="search-input">
+          <label for="search-input">google search</label>
+          <div id="search-toggles" class="web-search-selected">
+            <button id="search-web-toggle">Web</button>
+            <button id="search-images-toggle">Images</button>
+          </div>
+          <button id="search-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 52.966 52.966" style="enable-background:new 0 0 52.966 52.966;" xml:space="preserve" width="512px" height="512px">
+              <path d="M51.704,51.273L36.845,35.82c3.79-3.801,6.138-9.041,6.138-14.82c0-11.58-9.42-21-21-21s-21,9.42-21,21s9.42,21,21,21  c5.083,0,9.748-1.817,13.384-4.832l14.895,15.491c0.196,0.205,0.458,0.307,0.721,0.307c0.25,0,0.499-0.093,0.693-0.279  C52.074,52.304,52.086,51.671,51.704,51.273z M21.983,40c-10.477,0-19-8.523-19-19s8.523-19,19-19s19,8.523,19,19  S32.459,40,21.983,40z" fill="#CCCCCC"/>
+            </svg>
+          </button>
+
+        </section>
+        <section class="bookmarks-container">
+          <!-- bookmark list -->
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
