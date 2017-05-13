@@ -250,3 +250,25 @@ window.onload = function(){
 	//animation loop
 	setInterval(draw, 50);
 }
+
+
+
+//hide loader when page is loaded
+
+$(window).on('load', function(){
+
+  function hideLoader() {
+    var loadingVeil = $("#loading-screen");
+
+    loadingVeil.addClass("loaded");
+    $(".wrapper").addClass("loaded");
+
+    setTimeout(function () {
+      loadingVeil.remove();
+    }, 1000);
+
+  }
+
+  hideLoader();
+
+});
