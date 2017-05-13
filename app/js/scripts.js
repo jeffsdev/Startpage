@@ -261,7 +261,7 @@ $(window).on('load', function(){
     var loadingVeil = $("#loading-screen");
 
     loadingVeil.addClass("loaded");
-    $(".wrapper").addClass("loaded");
+    $("body").addClass("loaded");
 
     setTimeout(function () {
       loadingVeil.remove();
