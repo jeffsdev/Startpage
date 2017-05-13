@@ -1,8 +1,9 @@
 body {
   background: #888;
   // background-image: url("../img/autumn-leaves.jpg");
-  background-image: url("https://static.pexels.com/photos/24642/pexels-photo-24642.jpg");
-  background-position: right top;
+  // background-image: url("https://static.pexels.com/photos/24642/pexels-photo-24642.jpg");
+  background-image: url("../img/misty-forest.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -18,6 +19,10 @@ canvas {
   max-height: 100%;
   z-index: -1;
   filter: blur(2px);
+  transform: rotate(180deg);
+  @media screen and (width: 768px) and (height: 1024px) {
+    display: none;
+  }
 }
 
 .wrapper {
@@ -76,7 +81,7 @@ main {
       &.active {
         top: -15px;
         font-size: 1em;
-        color: #eacca0;
+        color: $primaryColor;
         text-shadow: 0 0 10px;
         transition: 0.3s;
       }
@@ -96,7 +101,7 @@ main {
       margin-bottom: 20px;
       &:focus {
         outline: none;
-        border-color: #eacca0;
+        border-color: $primaryColor;
       }
       &::-webkit-input-placeholder {
         color: #aaa;
@@ -113,7 +118,7 @@ main {
       position: absolute;
       width: 100%;
       top: -25px;
-      color: #6B8298;
+      color: $primaryColor;
       text-align: center;
     }
     #search-submit {
@@ -139,7 +144,7 @@ main {
       &:hover {
         background: rgba(200, 200, 200, 0.2);
         path {
-          fill: #eacca0;
+          fill: $primaryColor;
         }
       }
       &:focus,
@@ -149,7 +154,7 @@ main {
       &.active {
         background: rgba(200, 200, 200, 0.2);
         path {
-          fill: #eacca0;
+          fill: $primaryColor;
         }
         &:hover {
           background: rgba(200, 200, 200, 0.4);
@@ -195,7 +200,7 @@ main {
           transition: 0.3s;
         }
         #search-web-toggle {
-          color: #eacca0;
+          color: $primaryColor;
           text-shadow: 0 0 5px;
         }
       }
@@ -205,20 +210,20 @@ main {
           transition: 0.3s;
         }
         #search-images-toggle {
-          color: #eacca0;
+          color: $primaryColor;
           text-shadow: 0 0 5px;
         }
       }
     }
     #search-web-toggle {
       &:hover {
-        color: #eacca0;
+        color: $primaryColor;
         text-shadow: 0 0 5px;
       }
     }
     #search-images-toggle {
       &:hover {
-        color: #eacca0;
+        color: $primaryColor;
         text-shadow: 0 0 5px;
       }
     }

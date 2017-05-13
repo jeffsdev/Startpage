@@ -107,8 +107,8 @@ img {
 
 body {
   background: #888;
-  background-image: url("https://static.pexels.com/photos/24642/pexels-photo-24642.jpg");
-  background-position: right top;
+  background-image: url("../img/misty-forest.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -121,7 +121,11 @@ canvas {
   max-width: 100%;
   max-height: 100%;
   z-index: -1;
-  filter: blur(2px); }
+  filter: blur(2px);
+  transform: rotate(180deg); }
+  @media screen and (width: 768px) and (height: 1024px) {
+    canvas {
+      display: none; } }
 
 .wrapper {
   height: 100%;
@@ -168,7 +172,7 @@ main .search-container {
     main .search-container label.active {
       top: -15px;
       font-size: 1em;
-      color: #eacca0;
+      color: #8cff7a;
       text-shadow: 0 0 10px;
       transition: 0.3s; }
   main .search-container #search-input {
@@ -186,7 +190,7 @@ main .search-container {
     margin-bottom: 20px; }
     main .search-container #search-input:focus {
       outline: none;
-      border-color: #eacca0; }
+      border-color: #8cff7a; }
     main .search-container #search-input::-webkit-input-placeholder {
       color: #aaa; }
     main .search-container #search-input::-moz-placeholder {
@@ -199,7 +203,7 @@ main .search-container {
     position: absolute;
     width: 100%;
     top: -25px;
-    color: #6B8298;
+    color: #8cff7a;
     text-align: center; }
   main .search-container #search-submit {
     box-sizing: border-box;
@@ -222,13 +226,13 @@ main .search-container {
     main .search-container #search-submit:hover {
       background: rgba(200, 200, 200, 0.2); }
       main .search-container #search-submit:hover path {
-        fill: #eacca0; }
+        fill: #8cff7a; }
     main .search-container #search-submit:focus, main .search-container #search-submit:active {
       outline: 0; }
     main .search-container #search-submit.active {
       background: rgba(200, 200, 200, 0.2); }
       main .search-container #search-submit.active path {
-        fill: #eacca0; }
+        fill: #8cff7a; }
       main .search-container #search-submit.active:hover {
         background: rgba(200, 200, 200, 0.4); }
   main .search-container #search-web-toggle,
@@ -264,19 +268,19 @@ main .search-container {
       left: 0%;
       transition: 0.3s; }
     main .search-container #search-toggles.web-search-selected #search-web-toggle {
-      color: #eacca0;
+      color: #8cff7a;
       text-shadow: 0 0 5px; }
     main .search-container #search-toggles.images-search-selected:before {
       left: 50%;
       transition: 0.3s; }
     main .search-container #search-toggles.images-search-selected #search-images-toggle {
-      color: #eacca0;
+      color: #8cff7a;
       text-shadow: 0 0 5px; }
   main .search-container #search-web-toggle:hover {
-    color: #eacca0;
+    color: #8cff7a;
     text-shadow: 0 0 5px; }
   main .search-container #search-images-toggle:hover {
-    color: #eacca0;
+    color: #8cff7a;
     text-shadow: 0 0 5px; }
   @media screen and (min-width: 768px) {
     main .search-container {
@@ -360,7 +364,7 @@ header {
         width: 75%; } }
     header .greeting-container h1 {
       font-size: 3em;
-      color: #eacca0; }
+      color: #8cff7a; }
       @media screen and (min-width: 768px) {
         header .greeting-container h1 {
           font-size: 5em; } }

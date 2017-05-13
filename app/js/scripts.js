@@ -54,7 +54,7 @@ $(document).ready(function() {
   $('.search-container #search-submit').click(function(event) {
     event.preventDefault;
     if ( $("#search-input").val().length === 0 ) {
-      $('.search-container').prepend("<span id='search-warn'>Please enter search parameters you fuck</span>");
+      $('.search-container').prepend("<span id='search-warn'>Please enter search parameters!</span>");
       $("#search-warn").fadeIn( 800 ).delay( 1500 ).fadeOut( 800, function() {
         $("#search-warn").remove();
       });
@@ -176,14 +176,14 @@ window.onload = function(){
 	canvas.height = H;
 
 	//snowflake particles
-	var mp = 125; //max particles
+	var mp = 50; //max particles
 	var particles = [];
 	for(var i = 0; i < mp; i++)
 	{
 		particles.push({
 			x: Math.random()*W, //x-coordinate
 			y: Math.random()*H, //y-coordinate
-			r: Math.random()*3+1, //radius
+			r: Math.random()*5+1, //radius
 			d: Math.random()*mp //density
 		})
 	}
@@ -193,7 +193,7 @@ window.onload = function(){
 	{
 		ctx.clearRect(0, 0, W, H);
 
-		ctx.fillStyle = "rgba(255, 255, 255, 0.8)";
+		ctx.fillStyle = "rgba(190, 231, 148, 0.6)";
 		ctx.beginPath();
 		for(var i = 0; i < mp; i++)
 		{
@@ -248,5 +248,5 @@ window.onload = function(){
 	}
 
 	//animation loop
-	setInterval(draw, 33);
+	setInterval(draw, 50);
 }
