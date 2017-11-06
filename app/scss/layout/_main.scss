@@ -2,7 +2,8 @@ body {
   background-color: #000;
   // background-image: url("../img/autumn-leaves.jpg");
   // background-image: url("https://static.pexels.com/photos/24642/pexels-photo-24642.jpg");
-  background-image: url("../img/misty-forest.jpg");
+  // background-image: url("../img/misty-forest.jpg");
+  background-image: url("../img/autumn-bg.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,13 +13,13 @@ body {
   // overflow: hidden;
   &.loaded {
     .wrapper {
-      animation: fadeIn 1s;
-      animation-delay: 0.75s;
+      animation: fadeIn 0.50s;
+      animation-delay: 0.25s;
       animation-fill-mode: forwards;
     }
     #google-app-bar {
-      animation: fadeIn 1s;
-      animation-delay: 1s;
+      animation: fadeIn 0.75s;
+      animation-delay: 0.75s;
       animation-fill-mode: forwards;
     }
   }
@@ -54,7 +55,7 @@ canvas {
   max-width: 100%;
   max-height: 100%;
   z-index: -1;
-  filter: blur(2px);
+  filter: blur(4px);
   transform: rotate(180deg);
   animation: fadeIn 2s;
   @media screen and (width: 768px) and (min-height: 900px) and (max-height: 1024px) {
@@ -76,7 +77,7 @@ canvas {
   // border-right: 1px solid #999;
   margin-left: auto;
   padding-bottom: 25px;
-  box-shadow: 0 0 30px 5px #888, 0 0 5px 2px #fff;
+  box-shadow: 0 0 30px 5px #bd714d, 0 0 5px 2px #fff;
   opacity: 0;
   @media screen and #{$tablet} {
     margin-right: 5%;
@@ -326,7 +327,7 @@ main {
   position: fixed;
   top: 0;
   right: 0;
-  box-shadow: 0 0 30px 5px #888, 0 0 5px 2px #fff;
+  box-shadow: 0 0 30px 5px #bd714d, 0 0 5px 2px #fff;
   opacity: 0;
   .google-icon {
     width: 75px;

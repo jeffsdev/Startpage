@@ -176,7 +176,7 @@ window.onload = function(){
 	canvas.height = H;
 
 	//snowflake particles
-	var mp = 50; //max particles
+	var mp = 60; //max particles
 	var particles = [];
 	for(var i = 0; i < mp; i++)
 	{
@@ -193,7 +193,7 @@ window.onload = function(){
 	{
 		ctx.clearRect(0, 0, W, H);
 
-		ctx.fillStyle = "rgba(190, 231, 148, 0.6)";
+		ctx.fillStyle = "rgba(234, 204, 160, 0.6)";
 		ctx.beginPath();
 		for(var i = 0; i < mp; i++)
 		{
