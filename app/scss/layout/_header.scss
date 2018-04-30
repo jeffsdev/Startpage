@@ -52,7 +52,7 @@ header {
       flex: none;
       margin: 0 auto 10px auto;
       padding: 50px 10px;
-      width: 75%;
+      width: 85%;
     }
     h1 {
       font-size: 3em;
@@ -64,7 +64,12 @@ header {
     .greeting-message {
       margin-top: 0.5em;
       font-size: 2em;
+      line-height: 1.5;
       font-family: 'Josefin Sans', sans-serif;
+      span {
+        display: block;
+        font-size: 0.8em;
+      }
       @media screen and #{$tablet} {
         font-size: 3em;
       }

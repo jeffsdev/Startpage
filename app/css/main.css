@@ -107,7 +107,7 @@ img {
 
 body {
   background-color: #000;
-  background-image: url("../img/autumn-bg.jpg");
+  background-image: url("../img/forest-castle.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -161,6 +161,7 @@ canvas {
       display: none; } }
 
 .wrapper {
+  position: relative;
   height: 100%;
   min-height: 450px;
   max-height: 100%;
@@ -169,7 +170,7 @@ canvas {
   background: rgba(0, 0, 0, 0.6);
   margin-left: auto;
   padding-bottom: 25px;
-  box-shadow: 0 0 30px 5px #bd714d, 0 0 5px 2px #fff;
+  box-shadow: 0 0 30px 5px #4070ac, 0 0 5px 1px #fef75a;
   opacity: 0; }
   @media screen and (min-width: 768px) {
     .wrapper {
@@ -180,7 +181,7 @@ canvas {
   @media screen and (min-width: 1024px) {
     .wrapper {
       max-width: 40%;
-      margin: 0 10% 0 auto;
+      margin: 0 5% 0 auto;
       min-width: 650px; } }
 
 main .search-container {
@@ -357,19 +358,25 @@ main .bookmarks-container {
       width: 75%; } }
 
 #google-app-bar {
-  width: auto;
+  width: 100%;
   height: auto;
   display: flex;
-  flex-direction: column;
-  position: fixed;
-  top: 0;
-  right: 0;
-  box-shadow: 0 0 30px 5px #bd714d, 0 0 5px 2px #fff;
+  justify-content: center;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.6);
+  bottom: 15%;
+  left: 0;
   opacity: 0; }
+  @media screen and (width: 1024px) and (height: 768px) {
+    #google-app-bar {
+      display: none; } }
+  @media screen and (max-width: 768px) {
+    #google-app-bar {
+      display: none; } }
   #google-app-bar .google-icon {
     width: 75px;
     height: 75px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 50%;
@@ -384,9 +391,6 @@ main .bookmarks-container {
       #google-app-bar .google-icon {
         width: 60px;
         height: 60px; } }
-    @media screen and (max-width: 768px) {
-      #google-app-bar .google-icon {
-        display: none; } }
   #google-app-bar .gmail {
     background-image: url("../img/gmail.png"); }
   #google-app-bar .googlemaps {
@@ -451,7 +455,7 @@ header {
         flex: none;
         margin: 0 auto 10px auto;
         padding: 50px 10px;
-        width: 75%; } }
+        width: 85%; } }
     header .greeting-container h1 {
       font-size: 3em;
       color: #eacca0; }
@@ -461,7 +465,11 @@ header {
     header .greeting-container .greeting-message {
       margin-top: 0.5em;
       font-size: 2em;
+      line-height: 1.5;
       font-family: 'Josefin Sans', sans-serif; }
+      header .greeting-container .greeting-message span {
+        display: block;
+        font-size: 0.8em; }
       @media screen and (min-width: 768px) {
         header .greeting-container .greeting-message {
           font-size: 3em; } }
