@@ -68,9 +68,9 @@ canvas {
 
 .wrapper {
   position: relative;
+  min-height: 920px;
   height: 100%;
-  min-height: 450px;
-  max-height: 100%;
+  // max-height: 100%;
   max-width: 90%;
   margin: auto;
   background: rgba(0, 0, 0, 0.6);
@@ -84,7 +84,7 @@ canvas {
     margin-right: 5%;
     max-width: 80%;
     margin: auto;
-    min-height: 650px;
+    min-height: 100vh;
   }
   @media screen and #{$desktop} {
     max-width: 40%;
@@ -277,36 +277,41 @@ main {
     }
   }
   .bookmarks-container {
-    display: none;
+    display: flex;
     flex: 1 1 100%;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     order: 2;
-    padding: 10px;
+    padding: px;
     // overflow-y: scroll;
-    h2 {
+    h3 {
       flex: 1 1 100%;
       margin: 0 auto 1em auto;
-      text-align: center;
+      // text-align: center;
     }
     .bookmark-category {
       // border: 1px solid red;
-      padding: 0 10px;
-      width: 48%;
+      padding: 0 0px;
+      width: 100%;
+      text-align: center;
       margin-bottom: 10px;
       .bookmark-category-title {
         margin-bottom: 10px;
-        font-size: 2em;
+        font-size: 1.6rem;
       }
       ul li {
         margin: 1rem 0;
+        color: #eacca0;
+      }
+      a:hover {
+        text-decoration: underline;
       }
       @media screen and #{$tablet} {
         width: 33%;
       }
       @media screen and #{$desktop} {
-        width: 50%;
+        width: 33.33%;
       }
     }
     @media screen and #{$tablet} {
@@ -325,9 +330,9 @@ main {
   height: auto;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
   background-color: rgba(0,0,0,0.6);
-  bottom: 15%;
+  bottom: 0%;
   left: 0;
   // box-shadow: 0 0 30px 5px #bd714d, 0 0 5px 2px #fff;
   opacity: 0;

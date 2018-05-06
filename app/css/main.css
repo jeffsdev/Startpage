@@ -9,7 +9,8 @@ html {
   box-sizing: border-box;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  height: 100%; }
+  height: auto;
+  min-height: 100%; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
@@ -19,7 +20,8 @@ body {
   font: 16px/1 "Roboto", sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  height: 100%; }
+  height: auto;
+  min-height: 100%; }
 
 h1,
 h2,
@@ -162,9 +164,8 @@ canvas {
 
 .wrapper {
   position: relative;
+  min-height: 920px;
   height: 100%;
-  min-height: 450px;
-  max-height: 100%;
   max-width: 90%;
   margin: auto;
   background: rgba(0, 0, 0, 0.6);
@@ -177,7 +178,7 @@ canvas {
       margin-right: 5%;
       max-width: 80%;
       margin: auto;
-      min-height: 650px; } }
+      min-height: 100vh; } }
   @media screen and (min-width: 1024px) {
     .wrapper {
       max-width: 40%;
@@ -324,32 +325,35 @@ main .search-container {
       width: 75%; } }
 
 main .bookmarks-container {
-  display: none;
+  display: flex;
   flex: 1 1 100%;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   order: 2;
-  padding: 10px; }
-  main .bookmarks-container h2 {
+  padding: px; }
+  main .bookmarks-container h3 {
     flex: 1 1 100%;
-    margin: 0 auto 1em auto;
-    text-align: center; }
+    margin: 0 auto 1em auto; }
   main .bookmarks-container .bookmark-category {
-    padding: 0 10px;
-    width: 48%;
+    padding: 0 0px;
+    width: 100%;
+    text-align: center;
     margin-bottom: 10px; }
     main .bookmarks-container .bookmark-category .bookmark-category-title {
       margin-bottom: 10px;
-      font-size: 2em; }
+      font-size: 1.6rem; }
     main .bookmarks-container .bookmark-category ul li {
-      margin: 1rem 0; }
+      margin: 1rem 0;
+      color: #eacca0; }
+    main .bookmarks-container .bookmark-category a:hover {
+      text-decoration: underline; }
     @media screen and (min-width: 768px) {
       main .bookmarks-container .bookmark-category {
         width: 33%; } }
     @media screen and (min-width: 1024px) {
       main .bookmarks-container .bookmark-category {
-        width: 50%; } }
+        width: 33.33%; } }
   @media screen and (min-width: 768px) {
     main .bookmarks-container {
       flex: none;
@@ -362,9 +366,9 @@ main .bookmarks-container {
   height: auto;
   display: flex;
   justify-content: center;
-  position: absolute;
+  position: relative;
   background-color: rgba(0, 0, 0, 0.6);
-  bottom: 15%;
+  bottom: 0%;
   left: 0;
   opacity: 0; }
   @media screen and (width: 1024px) and (height: 768px) {

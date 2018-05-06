@@ -111,29 +111,46 @@ $(document).ready(function() {
       "category": "Social Media",
       "links": [
         {
-          "url": "http://www.facebook.com",
+          "url": "https://www.facebook.com",
           "name": "Facebook"
         },
         {
-          "url": "http://www.twitter.com",
+          "url": "https://www.twitter.com",
           "name": "Twitter"
         },
         {
-          "url": "http://www.linkedin.com",
+          "url": "https://www.linkedin.com",
           "name": "LinkedIn"
+        },
+        {
+          "url": "https://www.github.com",
+          "name": "GitHub"
         },
       ]
     },
     {
-      "category": "Coding",
+      "category": "Entertainment",
       "links": [
         {
-          "url": "http://www.github.com",
-          "name": "GitHub"
+          "url": "https://www.youtube.com/",
+          "name": "YouTube"
+        },
+      ]
+    },
+    {
+      "category": "Imageboards",
+      "links": [
+        {
+          "url": "https://www.reddit.com/",
+          "name": "Reddit"
         },
         {
-          "url": "http://www.stackoverflow.com",
-          "name": "Stack Overflow"
+          "url": "http://boards.4chan.org/g/",
+          "name": "/g/"
+        },
+        {
+          "url": "http://boards.4chan.org/tg/",
+          "name": "/tg/"
         },
       ]
     },
@@ -144,9 +161,10 @@ $(document).ready(function() {
   bookmarks.forEach(function(i) {
     $(".bookmarks-container").append(
       "<div class='bookmark-category'>" +
-      "<h3 class='bookmark-category-title'>" +
-      i.category +
-      "</h3><ul></ul></div>"
+      // "<h3 class='bookmark-category-title'>" +
+      // i.category +
+      // "</h3><ul></ul></div>"
+      "<ul></ul></div>"
     );
     i.links.forEach(function(t) {
       $(".bookmark-category:last-child ul").append(
